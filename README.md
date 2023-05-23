@@ -43,13 +43,13 @@ Working in teams, students must design, build, and test a self-contained exoskel
 
 Each team can use just one exoskeleton device at the competition, but all students who work on the challenge will benefit from the learning experience of applying their technical knowledge. The competition has four main areas for the teams to excel:
 
-	1. Main Competition - Design, build and test an exo technology device to compete with other teams.
+⋅⋅1. Main Competition - Design, build and test an exo technology device to compete with other teams.
 
-	2. Design Competition - Create a virtual prototype of your device.
+⋅⋅2. Design Competition - Create a virtual prototype of your device.
 
-	3. Poster Competition - Produce a poster to publicize the teams’ work. The poster is a demonstration of the team’s ability to sell their design solution pictorially.
+⋅⋅3. Poster Competition - Produce a poster to publicize the teams’ work. The poster is a demonstration of the team’s ability to sell their design solution pictorially.
 
-	4. Presentation Competition - Give a short presentation explaining the design and development of their device to demonstrate their verbal & presentational skills.
+⋅⋅4. Presentation Competition - Give a short presentation explaining the design and development of their device to demonstrate their verbal & presentational skills.
 
 ### Built With
 * C/C++
