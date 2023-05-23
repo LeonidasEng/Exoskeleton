@@ -36,14 +36,14 @@
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
-	<li><a href="#changelog">Changelog</a></li>
-	<li><a href="#internal-intstructions">Internal Instructions</a>
-	  <ul>
+    	  <ul>
         <li><a href="#sprint-1">Sprint 1</a></li>
         <li><a href="#sprint-1">Sprint 2</a></li>
       </ul>
-	</li>
-    <li><a href="#contributing">Contributing</a></li>
+	  </li>
+    <li><a href="#changelog">Changelog</a></li>
+    <li><a href="#internal-instructions">Internal Instructions</a>
+    <li><a href="#contributing-(external)">Contributing (External)</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
