@@ -98,10 +98,10 @@ See the [open issues](https://github.com/LeonidasEng/Exoskeleton/issues) for a f
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
-## Contributing Internal
+## Contributing - Internal
 To be granted access to this repo, you will receive an invitation link via your  
 
-## Contributing External
+## Contributing - External
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
