@@ -99,7 +99,35 @@ See the [open issues](https://github.com/LeonidasEng/Exoskeleton/issues) for a f
 
 <!-- CONTRIBUTING -->
 ## Contributing - Internal
-To be granted access to this repo, you will receive an invitation link via your  
+### Accept the Invite
+1. To be granted access to this repo, you will receive an invitation link via your UCLAN email address.
+2. You need to click on the link provided in the notification to accept the invitation.
+3. If you don't have a GitHub account, you will be prompted to create one before accepting the invitation.
+
+### Clone the Repo
+1. Once you have accepted the invitation, you need to clone the repository to your local machine.
+2. On the repository page, click on the green "Code" button.
+3. Copy the HTTPS or SSH URL of the repository (you can toggle between the two options).
+4. Open a terminal or command prompt on your local machine.
+5. Navigate to the directory where you want to clone the repository.
+6. Run the following command for HTTPS:
+    ```sh
+    git clone https://github.com/LeonidasEng/Exoskeleton.git
+    ```
+### Accessing the Repo
+1. After cloning the repository, you can access its contents on your local machine.
+2. You can make changes, add files, or create branches within the repository based on the permissions granted to you.
+
+### Push changes
+1. Once you've made changes to the repository, you can push those changes back to GitHub.
+2. In the terminal or command prompt, navigate to the repo's directory.
+3. Run the following commands to stage, commit, and push the changes:
+    ```sh
+    git add .
+    git commit -m "Enter a descriptive commit message"
+    git push
+    ```
+That's it now you can collaborate on the project with the rest of the team!
 
 ## Contributing - External
 
