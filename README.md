@@ -42,8 +42,8 @@
       </ul>
 	  </li>
     <li><a href="#changelog">Changelog</a></li>
-    <li><a href="#internal-instructions">Internal Instructions</a>
-    <li><a href="#contributing-(external)">Contributing (External)</a></li>
+    <li><a href="#contributing-internal">Contributing - Internal</a></li>
+    <li><a href="#contributing-external">Contributing - External</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -98,10 +98,10 @@ See the [open issues](https://github.com/LeonidasEng/Exoskeleton/issues) for a f
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
-## Internal Instructions
-You will be granted access 
+## Contributing Internal
+To be granted access to this repo, you will receive an invitation link via your  
 
-## Contributing (External)
+## Contributing External
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
