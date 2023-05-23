@@ -7,8 +7,10 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
-![Project Logo](/images/project-logo.png)
-  <h3 align="center">Best-README-Template</h3>
+  <a href="https://github.com/LeonidasEng/Exoskeleton/">
+    <img src="images/project-logo.png" alt="Logo">
+  </a>
+  <h3 align="center">UCLAN Exogames Project</h3>
 
   <p align="center">
     UCLAN Exoskeleton Project Files
@@ -86,11 +88,10 @@ Each team can use just one exoskeleton device at the competition, but all studen
 - [x] New version using only 2 Steppers
 - [ ] Testing with Mechanical System
 ### Sprint 2
-
-View changelog for detailed information on version history.
+- [ ] ...
 
 ## Changelog
-You can find the changelog for this repo here: [Changelog](https://github.com/LeonidasEng/Exoskeleton/CHANGELOG.md)
+You can find the changelog for this repo here: [Changelog](https://github.com/LeonidasEng/Exoskeleton/blob/main/CHANGELOG.md)
 
 See the [open issues](https://github.com/LeonidasEng/Exoskeleton/issues) for a full list of proposed features (and known issues).
 
@@ -98,9 +99,9 @@ See the [open issues](https://github.com/LeonidasEng/Exoskeleton/issues) for a f
 
 <!-- CONTRIBUTING -->
 ## Internal Instructions
+You will be granted access 
 
-
-## Contributing
+## Contributing (External)
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -116,8 +117,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 <!-- LICENSE -->
 ## License
-This source code is licensed under the BSD-style license found in: 
-LICENSE file in the root directory of this source tree.
+This source code is licensed under the BSD-style license found in: [LICENSE](https://github.com/LeonidasEng/Exoskeleton/blob/main/LICENSE) file in the root directory of this source tree.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
