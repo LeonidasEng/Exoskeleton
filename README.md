@@ -6,6 +6,22 @@
 -->
 
 <!-- PROJECT LOGO -->
+<div align="center">
+![Project Logo](/images/project-logo.png)
+  <h3 align="center">Best-README-Template</h3>
+
+  <p align="center">
+    UCLAN Exoskeleton Project Files
+    <br />
+    <br />
+    <a href="https://wokwi.com/projects/365491902229667841">View Current Simulation</a>
+    ·
+    <a href="https://github.com/LeonidasEng/Exoskeleton/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/LeonidasEng/Exoskeleton/issues">Request Feature</a>
+  </p>
+</div>
+
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -43,18 +59,18 @@ Working in teams, students must design, build, and test a self-contained exoskel
 
 Each team can use just one exoskeleton device at the competition, but all students who work on the challenge will benefit from the learning experience of applying their technical knowledge. The competition has four main areas for the teams to excel:
 
-⋅⋅1. Main Competition - Design, build and test an exo technology device to compete with other teams.
+1. Main Competition - Design, build and test an exo technology device to compete with other teams.
 
-⋅⋅2. Design Competition - Create a virtual prototype of your device.
+2. Design Competition - Create a virtual prototype of your device.
 
-⋅⋅3. Poster Competition - Produce a poster to publicize the teams’ work. The poster is a demonstration of the team’s ability to sell their design solution pictorially.
+3. Poster Competition - Produce a poster to publicize the teams’ work. The poster is a demonstration of the team’s ability to sell their design solution pictorially.
 
-⋅⋅4. Presentation Competition - Give a short presentation explaining the design and development of their device to demonstrate their verbal & presentational skills.
+4. Presentation Competition - Give a short presentation explaining the design and development of their device to demonstrate their verbal & presentational skills.
 
 ### Built With
 * C/C++
 * Arduino
-* Wokwi
+* Wokwi Online Simulator
 * SolidWorks
 
 
@@ -71,12 +87,14 @@ Each team can use just one exoskeleton device at the competition, but all studen
 - [ ] Testing with Mechanical System
 ### Sprint 2
 
-View changelog for detailed information on version history:
+View changelog for detailed information on version history.
 
 ## Changelog
-
+You can find the changelog for this repo here: [Changelog](https://github.com/LeonidasEng/Exoskeleton/CHANGELOG.md)
 
 See the [open issues](https://github.com/LeonidasEng/Exoskeleton/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 ## Internal Instructions
@@ -114,10 +132,10 @@ Project Link: [https://github.com/LeonidasEng/Exoskeleton](https://github.com/Le
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-[AccelStepper Class Reference](https://www.airspayce.com/mikem/arduino/AccelStepper/classAccelStepper.html)
-[AccelStepper - The Missing Manual](https://hackaday.io/project/183279-accelstepper-the-missing-manual/details)
-[Arduino with TB6600 using AccelStepper library](https://curiousscientist.tech/blog/arduino-accelstepper-tb6600-walkthrough)
-[Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+* [AccelStepper Class Reference](https://www.airspayce.com/mikem/arduino/AccelStepper/classAccelStepper.html)
+* [AccelStepper - The Missing Manual](https://hackaday.io/project/183279-accelstepper-the-missing-manual/details)
+* [Arduino with TB6600 using AccelStepper library](https://curiousscientist.tech/blog/arduino-accelstepper-tb6600-walkthrough)
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
