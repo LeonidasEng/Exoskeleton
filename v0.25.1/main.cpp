@@ -4,7 +4,7 @@
 |*                                                              LeonidasEng                                                        *|
 |*                                                                                                                                 *|
 |*                                              Exoskeleton - Electronic System Prototype                                          *|
-|*                                                                 v0.25                                                           *|
+|*                                                                v0.25.1                                                          *|
 \***********************************************************************************************************************************/
 
 /* 
@@ -22,6 +22,10 @@ Using a system of buttons and sensors, the motors can tension bungee cords to a 
 
 
 Changelog:
+v0.25.1
+This version has been edited to only work for two stepper motors instead of 4
+--- Simulation v0.25.1: https://wokwi.com/projects/365491902229667841
+
 v0.25
 There have been several improvements from v0.2, these include:
 - Calibration sequence for stepper aligment takes place before the system can be used. 
@@ -29,8 +33,6 @@ There have been several improvements from v0.2, these include:
 - Release the tension by double pressing the button for each arm.
 - Non-blocking code allows for simultaneous actions and monitoring in loops.
 - Improved performance.
-
---- Simulation v0.25: https://wokwi.com/projects/364728810639192065
 
 v0.2
 Improvements over v0.1. Listed below:
@@ -56,12 +58,9 @@ Improvements over v0.1. Listed below:
 // Defining pins for the stepper drivers, this is for A4988 these will need to be changed when new components are sourced
 #define motor1_stepPin 2
 #define motor1_dirPin 3
-#define motor2_stepPin 4
-#define motor2_dirPin 5
-#define motor3_stepPin 6
-#define motor3_dirPin 7
-#define motor4_stepPin 8
-#define motor4_dirPin 9
+#define motor2_stepPin 6
+#define motor2_dirPin 7
+
 
 /* Button Control */
 #define pinButton1 22
@@ -88,8 +87,7 @@ LiquidCrystal lcd(A0, A1, A2, A3, A4, A5); // LCD pins are: (RS, E, D0, D1, D2, 
 /* A4988 Driver Objects */
 AccelStepper motor1(AccelStepper::DRIVER, motor1_stepPin, motor1_dirPin);
 AccelStepper motor2(AccelStepper::DRIVER, motor2_stepPin, motor2_dirPin);
-AccelStepper motor3(AccelStepper::DRIVER, motor3_stepPin, motor3_dirPin);
-AccelStepper motor4(AccelStepper::DRIVER, motor4_stepPin, motor4_dirPin);
+
 
 
 /* Position for Serial */
@@ -113,10 +111,7 @@ void setup()
   motor1.setAcceleration(macceleration);
   motor2.setMaxSpeed(mspeed);
   motor2.setAcceleration(macceleration);
-  motor3.setMaxSpeed(mspeed);
-  motor3.setAcceleration(macceleration);
-  motor4.setMaxSpeed(mspeed);
-  motor4.setAcceleration(macceleration);
+
   
   // Calibration of motors to the same origin (ZERO)
   Serial.print("Calibrating");
@@ -130,18 +125,10 @@ void setup()
   while (motor2.distanceToGo() != 0) {
     motor2.run();
   }
-  motor3.move(2);
-  while (motor3.distanceToGo() != 0) {
-    motor3.run();
-  }
-  motor4.move(2);
-  while (motor4.distanceToGo() != 0) {
-    motor4.run();
-  }
+
   motor1.setCurrentPosition(0); // Set the initial position to 0
   motor2.setCurrentPosition(0);
-  motor3.setCurrentPosition(0);
-  motor4.setCurrentPosition(0);
+
   delay(1000);
   Serial.println("COMPLETE");
   tone(buzzerPin, 1047, 250);
@@ -268,11 +255,8 @@ void SerialMon()
     Serial.print("Motor Position 1: ");
     Serial.print(motor1.currentPosition());
     Serial.print(" | Motor Position 2: ");
-    Serial.print(motor2.currentPosition());
-    Serial.print(" | Motor Position 3: ");
-    Serial.print(motor3.currentPosition());
-    Serial.print(" | Motor Position 4: ");
-    Serial.println(motor4.currentPosition());
+    Serial.println(motor2.currentPosition());
+
     lastMillis = millis();
   }
 }
@@ -289,9 +273,7 @@ void buttonControl()
       if (currentPosition1 > -maxSteps)
       {
         motor1.setSpeed(-mspeed);
-        motor2.setSpeed(-mspeed);
         motor1.run();
-        motor2.run();
         currentPosition1 = motor1.currentPosition();
       }
     }
@@ -300,18 +282,14 @@ void buttonControl()
     {
       if (currentPosition2 < maxSteps)
       {
-        motor3.setSpeed(mspeed);
-        motor4.setSpeed(mspeed);
-        motor3.run();
-        motor4.run();
-        currentPosition2 = motor3.currentPosition();
+        motor2.setSpeed(mspeed);
+        motor2.run();
+        currentPosition2 = motor2.currentPosition();
       }
     }
     else {
       motor1.stop();
       motor2.stop();
-      motor3.stop();
-      motor4.stop();
     }
   }
 }
@@ -322,10 +300,10 @@ void reset2Origin()
       - This function is non-blocking code able to run simultaneously for both stepper pairs.
       - We have the ability to find any current position of the motor and return it to the stepper origin(0) with one button gesture.
   */
-  AccelStepper* motors[] = {&motor1, &motor2, &motor3, &motor4}; // Array contains pointers to motor objects
-  bool motorActive[] = {false, false, false, false}; // using this bool array we can define active motors and prevent faults (wrong direction or alignment)
+  AccelStepper* motors[] = {&motor1, &motor2}; // Array contains pointers to motor objects
+  bool motorActive[] = {false, false}; // using this bool array we can define active motors and prevent faults (wrong direction or alignment)
 
-  for (int i = 0; i < 4; ++i) // In this for loop we iterate over each motor object finding each current position
+  for (int i = 0; i < 2; ++i) // In this for loop we iterate over each motor object finding each current position
   {
     long currentPos = motors[i]->currentPosition();
     //motors[i]->setSpeed(200);  // set the speed of the motor at the start of each function call
@@ -356,7 +334,7 @@ void reset2Origin()
   while (!allMotorsAtOrigin) // This will then continue to loop until each motor has reached the origin destination 
   {
     allMotorsAtOrigin = true;
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 2; ++i) {
       if (motorActive[i] && motors[i]->distanceToGo() != 0) // Each motor must be active and must have a non-zero distance to travel
       {
         if (i < 2 && (motorActive[2] || motorActive[3])) { // This prevents faults from occuring in motor pairs from moving in wrong direction 
