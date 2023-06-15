@@ -16,7 +16,7 @@
     UCLAN Exoskeleton Project Files
     <br />
     <br />
-    <a href="https://wokwi.com/projects/365491902229667841">View Current Simulation</a>
+    <a href="https://wokwi.com/projects/365491902229667841">View Sprint 1 Simulation</a>
     ·
     <a href="https://github.com/LeonidasEng/Exoskeleton/issues">Report Bug</a>
     ·
@@ -72,6 +72,7 @@ Each team can use just one exoskeleton device at the competition, but all studen
 ### Built With
 * C/C++
 * Arduino
+* Dynamixel SDK
 * Wokwi Online Simulator
 * SolidWorks
 
@@ -86,9 +87,11 @@ Each team can use just one exoskeleton device at the competition, but all studen
 	- [x] Button gesture control
 	- [x] Reset to Origin feature
 - [x] New version using only 2 Steppers
-- [ ] Testing with Mechanical System
-### Sprint 2
-- [ ] ...
+- [x] Testing with Mechanical System
+### Sprint 2 - 
+- [x] Ordered materials for project
+- [x] Exploring pot control using cont. servos
+- [ ] Dynamixel SDK research 
 
 ## Changelog
 You can find the changelog for this repo here: [Changelog](https://github.com/LeonidasEng/Exoskeleton/blob/main/CHANGELOG.md)
