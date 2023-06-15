@@ -47,6 +47,7 @@ void loop()
 valp = analogRead(potpin);            // reads the value of the potentiometer (value between 0 and 1023)
 avgPot=avgpos.reading(valp);
 
+/* Continuous Servo Motor - 3 positions */
 if (avgPot<pos){
   val=0;
 }

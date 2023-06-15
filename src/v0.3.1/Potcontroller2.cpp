@@ -1,3 +1,31 @@
+/***********************************************************************************************************************************\
+|*                                                           Exogames - Project                                                    *|
+|*                                                            Code created by:                                                     *|
+|*                                                              LeonidasEng                                                        *|
+|*                                                                                                                                 *|
+|*                                              Exoskeleton - Electronic System Prototype                                          *|
+|*                                                                v0.3.1                                                           *|
+\***********************************************************************************************************************************/
+
+/* 
+Copyright (c) 2023, LeonidasEng
+All rights reserved.
+
+This source code is licensed under the BSD-style license found in the
+LICENSE file in the root directory of this source tree. 
+
+***********************************************************************************************************************************
+
+Explanation of System Design:
+The following code controls a continuous servo motor with a potentiometer. However, with this version the positions of the servo motor 
+will SET tensions based on position of the arm. Keeping the arm extended will not move the motor. Moving between extension to 90 
+degrees increases tension, full contraction at 145 degrees releases the tension in the arm. Testing with the physical system will
+inform the required ranges for user comfort.
+
+
+*/
+
+#include <Arduino.h>
 #include <Servo.h>
 #include <movingAvg.h> 
 
