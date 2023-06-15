@@ -1,4 +1,29 @@
+/***********************************************************************************************************************************\
+|*                                                           Exogames - Project                                                    *|
+|*                                                            Code created by:                                                     *|
+|*                                                              LeonidasEng                                                        *|
+|*                                                                                                                                 *|
+|*                                              Exoskeleton - Electronic System Prototype                                          *|
+|*                                                                 v0.3                                                            *|
+\***********************************************************************************************************************************/
 
+/* 
+Copyright (c) 2023, LeonidasEng
+All rights reserved.
+
+This source code is licensed under the BSD-style license found in the
+LICENSE file in the root directory of this source tree. 
+
+***********************************************************************************************************************************
+
+Explanation of System Design:
+The following code controls a continuous servo motor with a potentiometer. Difficulties with high current draw, portability and position
+feedback drove this change. The continuous servo is placed on the back of the exoskeleton user and is connected to a potentiometer input.
+When the potentiometer moves the servo follows it.
+
+*/
+
+#include <Arduino.h>
 #include <Servo.h>
 #include <movingAvg.h> 
 
