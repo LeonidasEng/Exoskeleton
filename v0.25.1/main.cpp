@@ -17,7 +17,7 @@ LICENSE file in the root directory of this source tree.
 ***********************************************************************************************************************************
 
 Explanation of System Design:
-The following code controls 4 Stepper Motors using a4988 constant current drivers. 
+The following code controls 4# Stepper Motors using a4988 constant current drivers. 
 Using a system of buttons and sensors, the motors can tension bungee cords to a given speed and position.
 
 
