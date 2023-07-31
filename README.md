@@ -37,8 +37,10 @@
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
     	  <ul>
-        <li><a href="#sprint-1">Sprint 1</a></li>
-        <li><a href="#sprint-1">Sprint 2</a></li>
+        <li><a href="#sprint-1-wokwi-simulation">Sprint 1 Wokwi Simulation</a></li>
+        <li><a href="#sprint-2-preparation-with-feature-exploration">Sprint 2 Preparation with Feature exploration</a></li>
+        <li><a href="#sprint3-sprint-3-active-testing">Sprint 3 Active testing</a></li>
+        <li><a href="#sprint4-race-to-the-finish-line!">Sprint 4 Race to the finish line!</a></li>
       </ul>
 	  </li>
     <li><a href="#changelog">Changelog</a></li>
@@ -72,26 +74,41 @@ Each team can use just one exoskeleton device at the competition, but all studen
 ### Built With
 * C/C++
 * Arduino
-* Dynamixel SDK
+* Dynamixel2Arduino
+* DynamixelShield
 * Wokwi Online Simulator
 * SolidWorks
+* Ansys
 
 
 <!-- ROADMAP AND CHANGELOG -->
 ## Roadmap
-### Sprint 1 - Wokwi Simulation
-- [x] Created basic circuit
-- [x] Added components for 4 Stepper motor control
+### Sprint 1 Wokwi Simulation
+- [x] Created basic circuit.
+- [x] Added components for 4 Stepper motor control.
 - [x] Developed and refactored code to improve system modularity and functionality.
-	- [x] Implementing AccelStepper.h library
-	- [x] Button gesture control
-	- [x] Reset to Origin feature
-- [x] New version using only 2 Steppers
-- [x] Testing with Mechanical System
-### Sprint 2 - 
-- [x] Ordered materials for project
-- [x] Exploring pot control using cont. servos
-- [ ] Dynamixel SDK research 
+	- [x] Implementing AccelStepper.h library.
+	- [x] Button gesture control.
+	- [x] Reset to Origin feature.
+- [x] New version using only 2 Steppers.
+- [x] Testing with Mechanical System.
+### Sprint 2 Preparation with Feature exploration
+- [x] Ordered materials for project.
+- [x] Exploring pot control using cont. servos.
+- [x] Dynamixel SDK research.
+- [x] Dynamixel Shield research.
+- [x] Dynamixel2Arduino and XM430-W210-R research.
+- [x] First script draft and flex sensor idea. 
+### Sprint 3 Active testing
+- [x] Requirements Analysis for Dynamixel motors.
+- [x] Minimum Viable Product (MVP) strategy.
+- [x] 1 Dynamixel motor working with 3-way switch (breadboard switch).
+- [x] 2 Dynamixel motor working with 3-way switch (breadboard switch). 
+- [x] Pilot Trial: Testing with right shoulder-wing.
+- [x] Code Refactoring.
+- [ ] Error Handling.
+### Sprint 4 Race to the finish line!
+- [x] Code Development: Potentiometer control for Dynamixel motors. 
 
 ## Changelog
 You can find the changelog for this repo here: [Changelog](https://github.com/LeonidasEng/Exoskeleton/blob/main/CHANGELOG.md)
@@ -167,6 +184,9 @@ Project Link: [https://github.com/LeonidasEng/Exoskeleton](https://github.com/Le
 * [AccelStepper - The Missing Manual](https://hackaday.io/project/183279-accelstepper-the-missing-manual/details)
 * [Arduino with TB6600 using AccelStepper library](https://curiousscientist.tech/blog/arduino-accelstepper-tb6600-walkthrough)
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+* [Slawomir Korbas](https://www.youtube.com/@slawomirkorbas)
+* [Dynamixel-Shield-Toolbox by nikwl](https://github.com/nikwl/dynamixel-shield-toolbox)
+* [Dynamixel XM430-W210-T/R](https://emanual.robotis.com/docs/en/dxl/x/xm430-w210/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
