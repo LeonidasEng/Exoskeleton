@@ -81,7 +81,7 @@ void(* resetFunc) (void) = 0; // Reset function used in the event of time out.
 void setup() 
 {
   // For Uno, Nano, Mini, and Mega, use UART port of DYNAMIXEL Shield to debug.
-  Serial.begin(115200);
+  DEBUG_SERIAL.begin(115200);
   
   // Set Port baudrate to 57600bps. This matches with DYNAMIXEL XM430 default baudrate.
   dxl.begin(57600);
@@ -101,18 +101,18 @@ void setup()
   switch (connectedCount) {
     case 0:
       // If no motors are connected, reset the Arduino.
-      Serial.println("No motors are connected. Resetting Arduino.");
+      DEBUG_SERIAL.println("No motors are connected. Resetting Arduino.");
       resetFunc();
       break;
     case 1:
       // If only one motor is connected, continue normal operation.
-      Serial.println("Only one motor is connected. Operation will continue but 2 motors are recommended.");
-      Serial.println();
+      DEBUG_SERIAL.println("Only one motor is connected. Operation will continue but 2 motors are recommended.");
+      DEBUG_SERIAL.println();
       break;
     default:
       // If both motors are connected, notify of optimal setup.
-      Serial.println("Both motors are connected. Optimal setup established.");
-      Serial.println();
+      DEBUG_SERIAL.println("Both motors are connected. Optimal setup established.");
+      DEBUG_SERIAL.println();
       break;
   }
 
@@ -128,24 +128,24 @@ void setup()
       // Set torque on for the current motor ID
       dxl.torqueOn(DXL_IDs[i]);
   }
-  Serial.println("Operating Mode changed to: Extended Position Mode");
-  Serial.println();
+  DEBUG_SERIAL.println("Operating Mode changed to: Extended Position Mode");
+  DEBUG_SERIAL.println();
 
   // Speed call - Required every time Operating Mode is changed
   float speedPct = 50.0;  // 50% speed is equivalent to 38.5 RPM (No load) at 12V
   if (!setSpeed(dxl, DXL_IDs, speedPct)) {
-    Serial.println("Failed to set speed for one or more motors!");
-    Serial.println();
+    DEBUG_SERIAL.println("Failed to set speed for one or more motors!");
+    DEBUG_SERIAL.println();
     delay(1000);
   }
 
   // Enables pin for user buttons
   pinMode(switchPin, INPUT_PULLUP);
   
-  Serial.println();
-  Serial.println("Setup Complete!");
+  DEBUG_SERIAL.println();
+  DEBUG_SERIAL.println("Setup Complete!");
   delay(1000);
-  Serial.println();
+  DEBUG_SERIAL.println();
  
 }
 
@@ -191,11 +191,11 @@ void SerialMon()
   if (millis() - lastMillis >= interval)
   {
     // Move cursor to the beginning of the line with '\r'
-    Serial.print("\r");
-    Serial.print("Motor 1 (ID 1) Position: ");
-    Serial.print(dxl.getPresentPosition(DXL_IDs[0]));
-    Serial.print(" | Motor 2 (ID 3) Position 2: ");
-    Serial.println(dxl.getPresentPosition(DXL_IDs[1]));
+    DEBUG_SERIAL.print("\r");
+    DEBUG_SERIAL.print("Motor 1 (ID 1) Position: ");
+    DEBUG_SERIAL.print(dxl.getPresentPosition(DXL_IDs[0]));
+    DEBUG_SERIAL.print(" | Motor 2 (ID 3) Position 2: ");
+    DEBUG_SERIAL.println(dxl.getPresentPosition(DXL_IDs[1]));
 
     lastMillis = millis();
   }
@@ -209,16 +209,16 @@ bool setSpeed(Dynamixel2Arduino &dxl, uint8_t* DXL_IDs, float speedPct)
   uint32_t newSpeedRpm = speedPct * maxDynamixelSpeed / 100;
   uint32_t writeTimeout = 100; // ms
   
-  Serial.print("\r");
+  DEBUG_SERIAL.print("\r");
   
   for (uint8_t i = 0; i < DXL_IDs_size; i++) {
     if (dxl.writeControlTableItem(PROFILE_VELOCITY, DXL_IDs[i], newSpeedRpm, writeTimeout)) {
-      Serial.println("Speed successfully changed to " + String(newSpeedRpm) + "rpm for Dynamixel motor with ID " + String(DXL_IDs[i]) + ".");
-      Serial.println();
+      DEBUG_SERIAL.println("Speed successfully changed to " + String(newSpeedRpm) + "rpm for Dynamixel motor with ID " + String(DXL_IDs[i]) + ".");
+      DEBUG_SERIAL.println();
       delay(500);
     } else {
-      Serial.println("Failed to set speed for Dynamixel motor with ID " + String(DXL_IDs[i]) + ".");
-      Serial.println();
+      DEBUG_SERIAL.println("Failed to set speed for Dynamixel motor with ID " + String(DXL_IDs[i]) + ".");
+      DEBUG_SERIAL.println();
       success = false;
     }
   }
@@ -232,20 +232,20 @@ bool checkMotorConnection(uint8_t* DXL_IDs, bool* isConnected, size_t size, int 
   for (size_t i = 0; i < size; i++) {
     int attempts = 0;
     while (!dxl.ping(DXL_IDs[i]) && attempts < MAX_ATTEMPTS) {
-      Serial.println("Failed to connect to Dynamixel motor with ID " + String(DXL_IDs[i]) + ". Retrying...");
-      Serial.println();
+      DEBUG_SERIAL.println("Failed to connect to Dynamixel motor with ID " + String(DXL_IDs[i]) + ". Retrying...");
+      DEBUG_SERIAL.println();
       delay(1000);  // Delay to prevent flooding requests to motor
       attempts++;
     }
     if (attempts == MAX_ATTEMPTS) {
-      Serial.println("Failed to connect to Dynamixel motor with ID " + String(DXL_IDs[i]) + ". Request timed out.");
+      DEBUG_SERIAL.println("Failed to connect to Dynamixel motor with ID " + String(DXL_IDs[i]) + ". Request timed out.");
       isConnected[i] = false;
       allConnected = false;
-      Serial.println();
+      DEBUG_SERIAL.println();
     } else {
-      Serial.println("Connection successful to Dynamixel motor with ID " + String(DXL_IDs[i]) + ".");
+      DEBUG_SERIAL.println("Connection successful to Dynamixel motor with ID " + String(DXL_IDs[i]) + ".");
       isConnected[i] = true;
-      Serial.println();
+      DEBUG_SERIAL.println();
     }
   }
   return allConnected;  // If we got through all motors without returning false, return true
