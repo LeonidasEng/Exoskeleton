@@ -44,7 +44,7 @@ system
 SoftwareSerial soft_serial(7, 8);  // DYNAMIXELShield UART RX/TX
 #define DXL_SERIAL   Serial
 #define DEBUG_SERIAL soft_serial
-#define DXL_DIR_PIN 2 // DYNAMIXEL Shield DIR PIN
+#define DXL_DIR_PIN 2 // DYNAMIXEL Shield direction pin
 #elif defined(ARDUINO_SAM_DUE) || defined(ARDUINO_SAM_ZERO)
 #define DEBUG_SERIAL SerialUSB
 #else
@@ -179,7 +179,7 @@ void loop()
   int pot2Value = analogRead(POT2_PIN);
 
   int pot1Position = map(pot1Value, 0, 1016, -2032, 2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1
-  int pot2Position = map(pot2Value, 0, 1016, -2032, 2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1
+  int pot2Position = map(pot2Value, 0, 1016, 2032, -2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1 - switched +/-
 
   if (DEBUG_SERIAL.available()) 
   {
@@ -189,13 +189,15 @@ void loop()
   SerialMon();
   if (!switchState1)
   {
-      basePosition = ID1_pos3_center;
-      basePosition3 = ID3_pos3_center;
-  } else if (!switchState2)
+      basePosition = ID1_pos3_center + pot1Position; // Add pot1 value
+      basePosition3 = ID3_pos3_center + pot2Position; // Add pot2 value
+  } 
+  else if (!switchState2)
   {
-      basePosition = ID1_pos2_center;
-      basePosition3 = ID3_pos2_center;
-  } else
+      basePosition = ID1_pos2_center + pot1Position; // Add pot1 value
+      basePosition3 = ID3_pos2_center + pot2Position; // Add pot2 value
+  } 
+  else
   {
     basePosition = homePositionValue;
     basePosition3 = homePositionValue;
@@ -203,8 +205,8 @@ void loop()
 
 
   // Set goal positions for both motors
-  dxl.setGoalPosition(DXL_IDs[0], basePosition  + pot1Position); // Set Motor ID1 (DXL_IDs[0]) position
-  dxl.setGoalPosition(DXL_IDs[1], basePosition3 + pot2Position); // Set Motor ID3 (DXL_IDs[1]) position
+  dxl.setGoalPosition(DXL_IDs[0], basePosition); // Set Motor ID1 (DXL_IDs[0]) position
+  dxl.setGoalPosition(DXL_IDs[1], basePosition3); // Set Motor ID3 (DXL_IDs[1]) position
 
 }
 
