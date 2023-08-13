@@ -28,11 +28,10 @@ controlled by using the 3 way rotary switch. Settings include:
 0 - No Tension.
 1 - 1 rotation of Tension
 2 - 2 rotations of Tension
-These values can be adjusted dependent on exo user feedback. Next steps will be to include potentiometer/flex sensor to increase/
-decrease tension based on switch position.
+These values can be adjusted dependent on exo user feedback.
 
-* v1.0.: This version now communicates with the HC-05 Bluetooth Module, this concludes the required parts for the Electronic
-system 
+* v1.0.: This version now communicates with the HC-05 Bluetooth Module, and is active with the potentiometers, this concludes the required parts for the Electronic system 
+
 */
 
 #include <Arduino.h>
@@ -41,7 +40,7 @@ system
 
 #if defined(ARDUINO_AVR_UNO) || defined(ARDUINO_AVR_MEGA2560)
 #include <SoftwareSerial.h>
-SoftwareSerial soft_serial(7, 8);  // DYNAMIXELShield UART RX/TX
+SoftwareSerial soft_serial(7, 8);  // DYNAMIXEL Shield UART RX/TX
 #define DXL_SERIAL   Serial
 #define DEBUG_SERIAL soft_serial
 #define DXL_DIR_PIN 2 // DYNAMIXEL Shield direction pin
@@ -61,7 +60,7 @@ char data; // Data for the BT connection
 // Bus controller object DXL
 Dynamixel2Arduino dxl(DXL_SERIAL, DXL_DIR_PIN);
 
-//Digital pin connected to the 3-way switch
+// Digital pins connected to the 3-way switch
 const uint8_t switchPin1 = 22;
 const uint8_t switchPin2 = 23;
 
@@ -79,11 +78,11 @@ int ID2_pos1_center = homePositionValue + 4096; // One rotation in the positive 
 int ID1_pos2_center = homePositionValue - 2 * 4096; // Two rotations in the negative direction
 int ID2_pos2_center = homePositionValue + 2 * 4096; // Two rotations in the positive direction
 
-//This namespace is required to use Control table item i.e. velocity, baud
-using namespace ControlTableItem;
+
+using namespace ControlTableItem; //This namespace is required to use Control table item i.e. velocity, baud
 
 
-void SerialMon(int pot1_Pos, int pot2_Pos);
+void SerialMon(int pot1_Pos, int pot2_Pos); // Now passes pot positon to Serial Monitor
 bool setSpeed(Dynamixel2Arduino &dxl, uint8_t* DXL_IDs, float speedPct); // Speed Control declaration
 bool checkMotorConnection (uint8_t* DXL_IDs, bool* isConnected, size_t size, int MAX_ATTEMPTS = 5); 
 void(* resetFunc) (void) = 0; // Reset function used in the event of time out.
@@ -100,7 +99,7 @@ void setup()
   // Set Port Protocol Version. This has to match with DYNAMIXEL protocol version.
   dxl.setPortProtocolVersion(DXL_PROTOCOL_VERSION);
 
-  bool isConnected[DXL_IDs_size];
+  bool isConnected[DXL_IDs_size]; // Declares isConnected to list connect state
 
   // Bluetooth communication initialised for setup()
   if (DEBUG_SERIAL.available()) 
@@ -109,7 +108,7 @@ void setup()
     DEBUG_SERIAL.println(data); 
   }
 
-  checkMotorConnection(DXL_IDs, isConnected, DXL_IDs_size);
+  checkMotorConnection(DXL_IDs, isConnected, DXL_IDs_size); // Call for motor ping
   
   uint8_t connectedCount = 0;
   for (uint8_t i = 0; i < DXL_IDs_size; i++) {
