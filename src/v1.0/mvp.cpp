@@ -51,7 +51,7 @@ SoftwareSerial soft_serial(7, 8);  // DYNAMIXELShield UART RX/TX
 #define DEBUG_SERIAL Serial
 #endif
 
-const uint8_t DXL_IDs[] = {1, 3}; // Dynamixel motors are ID'd in the EEPROM control table
+const uint8_t DXL_IDs[] = {1, 2}; // Dynamixel motors are ID'd in the EEPROM control table
 const float DXL_PROTOCOL_VERSION = 2.0; // Standard protocol for XM430
 const uint8_t DXL_IDs_size = sizeof(DXL_IDs) / sizeof(DXL_IDs[0]);
 uint8_t MAX_ATTEMPTS = 5; // Ping requests before time out.
@@ -67,23 +67,24 @@ const uint8_t switchPin2 = 23;
 
 // Potentiometer setup
 #define POT1_PIN A14
-#define POT2_PIN A15
+#define POT2_PIN A13
 int pot1Value;  // To store the current potentiometer 1 reading
 int pot2Value;  // To store the current potentiometer 2 reading
 
 uint16_t homePositionValue = 2048; // start with a default position
 int basePosition = 2048;  // for setting centers of ID 1 2048 = 0
 int basePosition3 = 2048; // for setting centers of ID 3 2048 = 0
-int ID1_pos2_center = homePositionValue - 4096; // One rotation in the negative direction
-int ID3_pos2_center = homePositionValue + 4096; // One rotation in the positive direction
-int ID1_pos3_center = homePositionValue - 2 * 4096; // Two rotations in the negative direction
-int ID3_pos3_center = homePositionValue + 2 * 4096; // Two rotations in the positive direction
+int ID1_pos1_center = homePositionValue - 4096; // One rotation in the negative direction
+int ID2_pos1_center = homePositionValue + 4096; // One rotation in the positive direction
+int ID1_pos2_center = homePositionValue - 2 * 4096; // Two rotations in the negative direction
+int ID2_pos2_center = homePositionValue + 2 * 4096; // Two rotations in the positive direction
 
 //This namespace is required to use Control table item i.e. velocity, baud
 using namespace ControlTableItem;
 
-// Speed Control declaration
-bool setSpeed(Dynamixel2Arduino &dxl, uint8_t* DXL_IDs, float speedPct);
+
+void SerialMon(int pot1_Pos, int pot2_Pos);
+bool setSpeed(Dynamixel2Arduino &dxl, uint8_t* DXL_IDs, float speedPct); // Speed Control declaration
 bool checkMotorConnection (uint8_t* DXL_IDs, bool* isConnected, size_t size, int MAX_ATTEMPTS = 5); 
 void(* resetFunc) (void) = 0; // Reset function used in the event of time out.
 
@@ -178,24 +179,26 @@ void loop()
   int pot1Value = analogRead(POT1_PIN);
   int pot2Value = analogRead(POT2_PIN);
 
-  int pot1Position = map(pot1Value, 0, 1016, -2032, 2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1
-  int pot2Position = map(pot2Value, 0, 1016, 2032, -2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1 - switched +/-
+  int pot1Position = map(pot1Value, 0, 1016, 2032, -2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1
+  int pot2Position = map(pot2Value, 0, 1016, -2032, 2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1
 
   if (DEBUG_SERIAL.available()) 
   {
     data = DEBUG_SERIAL.read();
     DEBUG_SERIAL.println(data); 
   }
-  SerialMon();
+  SerialMon(pot1Position, pot2Position); // Pass pot positions to SerialMon
+
   if (!switchState1)
   {
-      basePosition = ID1_pos3_center + pot1Position; // Add pot1 value
-      basePosition3 = ID3_pos3_center + pot2Position; // Add pot2 value
+    // Two Rotation
+      basePosition = ID1_pos2_center + pot1Position; // Add pot1 value
+      basePosition3 = ID2_pos2_center + pot2Position; // Add pot2 value
   } 
   else if (!switchState2)
   {
-      basePosition = ID1_pos2_center + pot1Position; // Add pot1 value
-      basePosition3 = ID3_pos2_center + pot2Position; // Add pot2 value
+      basePosition = ID1_pos1_center + pot1Position; // Add pot1 value
+      basePosition3 = ID2_pos1_center + pot2Position; // Add pot2 value
   } 
   else
   {
@@ -203,25 +206,36 @@ void loop()
     basePosition3 = homePositionValue;
   }
 
+  // Tolerance condition
+  int currentPosition1 = dxl.getPresentPosition(DXL_IDs[0]);
+  int currentPosition2 = dxl.getPresentPosition(DXL_IDs[1]);
 
-  // Set goal positions for both motors
-  dxl.setGoalPosition(DXL_IDs[0], basePosition); // Set Motor ID1 (DXL_IDs[0]) position
-  dxl.setGoalPosition(DXL_IDs[1], basePosition3); // Set Motor ID3 (DXL_IDs[1]) position
-
+  if (abs(basePosition - currentPosition1) > 20 || abs(basePosition3 - currentPosition2) > 20)
+  {
+    // Set goal positions for both motors only if they are outside the tolerance range
+    dxl.setGoalPosition(DXL_IDs[0], basePosition); // Set Motor ID1 (DXL_IDs[0]) position
+    dxl.setGoalPosition(DXL_IDs[1], basePosition3); // Set Motor ID3 (DXL_IDs[1]) position
+  }
+  
 }
 
-void SerialMon()
+void SerialMon(int pot1_Pos, int pot2_Pos)
 {
   static unsigned long lastMillis = 0; // Last Time
-  const unsigned long interval = 500;
+  const unsigned long interval = 1000;
   if (millis() - lastMillis >= interval)
   {
     // Move cursor to the beginning of the line with '\r'
     DEBUG_SERIAL.print("Motor 1 (ID 1) Position: ");
     DEBUG_SERIAL.print(dxl.getPresentPosition(DXL_IDs[0]));
-    DEBUG_SERIAL.print(" | Motor 2 (ID 3) Position: ");
-    DEBUG_SERIAL.println(dxl.getPresentPosition(DXL_IDs[1]));
+    DEBUG_SERIAL.print(" | Current Pot 1 Position: ");
+    DEBUG_SERIAL.println(pot1_Pos);
 
+    DEBUG_SERIAL.print("Motor 2 (ID 2) Position: ");
+    DEBUG_SERIAL.print(dxl.getPresentPosition(DXL_IDs[1]));
+    DEBUG_SERIAL.print(" | Current Pot 2 Position: ");
+    DEBUG_SERIAL.println(pot1_Pos);
+    DEBUG_SERIAL.println();
     lastMillis = millis();
   }
 }

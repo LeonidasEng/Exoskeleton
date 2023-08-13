@@ -106,9 +106,16 @@ Each team can use just one exoskeleton device at the competition, but all studen
 - [x] 2 Dynamixel motor working with 3-way switch (breadboard switch). 
 - [x] Pilot Trial: Testing with right shoulder-wing.
 - [x] Code Refactoring.
-- [ ] Error Handling.
+- [x] Error Handling.
+- [x] Pilot Trial: Full System
 ### Sprint 4 Race to the finish line!
-- [x] Code Development: Potentiometer control for Dynamixel motors. 
+- [x] Calibration
+- [x] Integration of HC-05 Module
+- [x] Potentiometer control for Dynamixel motors.
+- [x] System Refinement
+- [x] Pilot Trial: Complete System
+- [x] Troubleshooting and Final Checks
+- [ ] Demonstration at Exogames 2023  
 
 ## Changelog
 You can find the changelog for this repo here: [Changelog](https://github.com/LeonidasEng/Exoskeleton/blob/main/CHANGELOG.md)
