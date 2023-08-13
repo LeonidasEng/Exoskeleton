@@ -2,8 +2,19 @@
 
 ## Electronic System Version History:
 
+### v1.0
+- Complete version of the program for the competition.
+- Added tolerance to the pots to prevent fluctuations/noise in the analog signal from affecting the pot position at min/max.
+- Improvements to code readibility: IDs, variable names, comments.
+
+### v0.7
+- Added a new switch with different pin configuration
+- Integration of HC-05 for wireless serial communication
+- Integration of Potentiometer feature
+- Update to how Serial Monitor displays output
+
 ### v0.6.1
-- Improvements to success/failure statements, in the event of failure to complete an action, the action will be performed another 3 times before a time out will occur and the program will exit safely.
+- Improvements to success/failure statements, in the event of failure to complete an action, the action will be performed another 5 times before a time out will occur and the program will exit safely.
 
 ### v0.6
 In v0.6, testing begins using two servos and getting closer to achieving the MVP.
