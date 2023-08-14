@@ -20,8 +20,8 @@ Explanation of System Design:
 * Minimum Viable Product
 
 Motors are controlled via an identifier in DXL_IDs
-- Motor 1 with ID of 1 Right Shoulder
-- Motor 2 with ID of 3 Left Shoulder
+- Motor 1 with ID of 1 Left Shoulder
+- Motor 2 with ID of 2 Right Shoulder
 
 The following code controls a Dynamixel Servo Motor XM430-W210-R using an Arduino Mega and Dynamixel Shield. Tension positions are
 controlled by using the 3 way rotary switch. Settings include:
@@ -72,11 +72,11 @@ int pot2Value;  // To store the current potentiometer 2 reading
 
 uint16_t homePositionValue = 2048; // start with a default position
 int basePosition = 2048;  // for setting centers of ID 1 2048 = 0
-int basePosition3 = 2048; // for setting centers of ID 3 2048 = 0
+int basePosition3 = 2048; // for setting centers of ID 2 2048 = 0
 int ID1_pos1_center = homePositionValue - 4096; // One rotation in the negative direction
 int ID2_pos1_center = homePositionValue + 4096; // One rotation in the positive direction
-int ID1_pos2_center = homePositionValue - 2 * 4096; // Two rotations in the negative direction
-int ID2_pos2_center = homePositionValue + 2 * 4096; // Two rotations in the positive direction
+int ID1_pos2_center = homePositionValue - 1.5 * 4096; // One and a half rotations in the negative direction
+int ID2_pos2_center = homePositionValue + 1.5 * 4096; // one and a half rotations in the positive direction
 
 
 using namespace ControlTableItem; //This namespace is required to use Control table item i.e. velocity, baud
