@@ -65,8 +65,8 @@ const uint8_t switchPin1 = 22;
 const uint8_t switchPin2 = 23;
 
 // Potentiometer setup
-#define POT1_PIN A14
-#define POT2_PIN A13
+#define POT1_PIN A12 // LEFT
+#define POT2_PIN A13 // RIGHT
 int pot1Value;  // To store the current potentiometer 1 reading
 int pot2Value;  // To store the current potentiometer 2 reading
 
@@ -178,7 +178,7 @@ void loop()
   int pot1Value = analogRead(POT1_PIN);
   int pot2Value = analogRead(POT2_PIN);
 
-  int pot1Position = map(pot1Value, 0, 1016, 2032, -2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1
+  int pot1Position = map(pot1Value, 0, 1016, -2032, 2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1
   int pot2Position = map(pot2Value, 0, 1016, -2032, 2032);  // map the pot value to a range of -2032 to 2032 to match new Pot1
 
   if (DEBUG_SERIAL.available()) 
