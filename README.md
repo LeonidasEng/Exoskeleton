@@ -10,10 +10,10 @@
   <a href="https://github.com/LeonidasEng/Exoskeleton/">
     <img src="images/project-logo.png" alt="Logo">
   </a>
-  <h3 align="center">UCLAN Exogames Project</h3>
+  <h3 align="center">UCLAN Exogames 2023 Project</h3>
 
   <p align="center">
-    UCLAN Exoskeleton Project Files
+    UCLAN Exoskeleton - Exo Games 2023 Winner
     <br />
     <br />
     <a href="https://wokwi.com/projects/365491902229667841">View Sprint 1 Simulation</a>
@@ -115,7 +115,12 @@ Each team can use just one exoskeleton device at the competition, but all studen
 - [x] System Refinement
 - [x] Pilot Trial: Complete System
 - [x] Troubleshooting and Final Checks
-- [ ] Demonstration at Exogames 2023  
+- [x] Demonstration at Exogames 2023  
+
+### Competition Result
+Winner of ASTM’s Exo Games 2023: Award for designing, building, and testing an exoskeleton that demonstrates the augmentation of balance, strength, dexterity, speed, and stamina, while fulfilling ASTM standards.
+
+Winner of ASTM’s Exo Games 2023 Poster competition: Award for displaying and describing the competing exoskeleton clearly through utilisation of diagrams, technical explanations, and engineering principles.
 
 ## Changelog
 You can find the changelog for this repo here: [Changelog](https://github.com/LeonidasEng/Exoskeleton/blob/main/CHANGELOG.md)
