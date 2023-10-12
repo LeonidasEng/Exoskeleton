@@ -11,7 +11,8 @@
     <img src="images/project-logo.png" alt="Logo">
   </a>
   <br />
-  <img src="images/team-logo.png" alt="Team-Logo">
+  <br />
+  <h3 align="center"><img src="images/team-logo.png" alt="Team-Logo"></h3>
 
   <p align="center">
     UCLAN Quasi-active Exoskeleton - Exo Games 2023 Winner
