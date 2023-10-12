@@ -185,10 +185,7 @@ This source code is licensed under the GPLv3-style license found in: [LICENSE](h
 Leo Hayes - Developer
 
 Other team member's roles (anon):
-Technical Lead
-Systems Designer
-CAD Specialist
-Administrator
+Technical Lead, Systems Designer(s), CAD Specialist, Administrator,
 
 
 
