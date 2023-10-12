@@ -11,15 +11,12 @@
     <img src="images/project-logo.png" alt="Logo">
   </a>
   <br />
-  <br />
-  <h3 align="center"><img src="images/team-logo.png" alt="Team-Logo"></h3>
+  <h3 align="center">.
+  <img src="images/team-logo.png" alt="Team-Logo">
+  </h3>
 
   <p align="center">
     UCLAN Quasi-active Exoskeleton - Exo Games 2023 Winner
-    <br />
-    <br />
-    <a href="https://wokwi.com/projects/365491902229667841">View Sprint 1 Simulation</a>
-    ·
     <a href="https://github.com/LeonidasEng/Exoskeleton/issues">Report Bug</a>
     ·
     <a href="https://github.com/LeonidasEng/Exoskeleton/issues">Request Feature</a>
@@ -87,6 +84,7 @@ Each team can use just one exoskeleton device at the competition, but all studen
 <!-- ROADMAP AND CHANGELOG -->
 ## Roadmap
 ### Sprint 1 Wokwi Simulation
+<a href="https://wokwi.com/projects/365491902229667841">View Sprint 1 Simulation</a>
 - [x] Created basic circuit.
 - [x] Added components for 4 Stepper motor control.
 - [x] Developed and refactored code to improve system modularity and functionality.
