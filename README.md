@@ -7,11 +7,9 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <a href="https://github.com/LeonidasEng/Exoskeleton/">
     <img src="images/project-logo.png" alt="Logo">
-  </a>
   <br />
-  <h3 align="center">.
+  <h3 align="center">
   <img src="images/team-logo.png" alt="Team-Logo">
   </h3>
 
