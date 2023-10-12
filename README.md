@@ -15,6 +15,7 @@
 
   <p align="center">
     UCLAN Quasi-active Exoskeleton - Exo Games 2023 Winner
+    <br />
     <a href="https://github.com/LeonidasEng/Exoskeleton/issues">Report Bug</a>
     ·
     <a href="https://github.com/LeonidasEng/Exoskeleton/issues">Request Feature</a>
