@@ -181,7 +181,7 @@ This source code is licensed under the GPLv3-style license found in: [LICENSE](h
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
-## 6 person team with set roles
+## Team Member roles
 Leo Hayes - Developer
 
 Other team member's roles (anon):
