@@ -24,6 +24,7 @@
   </p>
 </div>
 
+<img src="images/Exo_Games_Event.png" alt="Exo Games 2023">
 
 <!-- TABLE OF CONTENTS -->
 <details>
