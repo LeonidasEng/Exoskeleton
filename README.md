@@ -29,7 +29,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-exo-games">About The Exo Games</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -53,7 +53,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About The Exo Games
 ASTM International’s Exo Technology Center of Excellence (ET CoE) is sponsoring the Exo Games, a new initiative to improve student involvement and education in the exo technologies industry.
 
 The Exo Games is a competition open to university teams of S.T.E.M degree students, designed to connect them with exo industry professionals, help them build lifelong relationships, and get hands-on experience with new exo standards.  Team slots are on a first come first served basis and ASTM reserves the right to limit the number of teams due to space and logistic considerations."
@@ -81,7 +81,7 @@ Each team can use just one exoskeleton device at the competition, but all studen
 
 
 <!-- ROADMAP AND CHANGELOG -->
-## Roadmap
+## B.A.L.A.N.C.E - Roadmap
 ### Sprint 1 Wokwi Simulation
 <a href="https://wokwi.com/projects/365491902229667841">View Sprint 1 Simulation</a>
 - [x] Created basic circuit.
@@ -183,7 +183,7 @@ This source code is licensed under the GPLv3-style license found in: [LICENSE](h
 ## Team Member roles
 Leo Hayes - Developer
 
-Other team member's roles (anon):
+Five other team members and their roles (anon):
 Technical Lead, Systems Designer(s), CAD Specialist, Administrator.
 
 
