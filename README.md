@@ -163,8 +163,7 @@ See the [open issues](https://github.com/LeonidasEng/Exoskeleton/issues) for a f
 That's it now you can collaborate on the project with the rest of the team!
 
 ## Contributing - External
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Any feedback/contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 
@@ -178,14 +177,20 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 <!-- LICENSE -->
 ## License
-This source code is licensed under the BSD-style license found in: [LICENSE](https://github.com/LeonidasEng/Exoskeleton/blob/main/LICENSE) file in the root directory of this source tree.
+This source code is licensed under the GPLv3-style license found in: [LICENSE](https://github.com/LeonidasEng/Exoskeleton/blob/main/LICENSE) file in the root directory of this source tree.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
-<!-- CONTACT -->
-## Contact
-UCLAN
-Leo Hayes - Developer - lhayes7@uclan.ac.uk
+## 6 person team with set roles
+Leo Hayes - Developer
+
+Other team member's roles (anon):
+Technical Lead
+Systems Designer
+CAD Specialist
+Administrator
+
+
 
 Project Link: [https://github.com/LeonidasEng/Exoskeleton](https://github.com/LeonidasEng/Exoskeleton)
 
