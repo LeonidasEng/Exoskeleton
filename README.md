@@ -10,10 +10,11 @@
   <a href="https://github.com/LeonidasEng/Exoskeleton/">
     <img src="images/project-logo.png" alt="Logo">
   </a>
-  <h3 align="center"><img src="images/team-logo.png" alt="Team-Logo"></h3>
+  <br />
+  <img src="images/team-logo.png" alt="Team-Logo">
 
   <p align="center">
-    UCLAN Exoskeleton - Exo Games 2023 Winner
+    UCLAN Quasi-active Exoskeleton - Exo Games 2023 Winner
     <br />
     <br />
     <a href="https://wokwi.com/projects/365491902229667841">View Sprint 1 Simulation</a>
