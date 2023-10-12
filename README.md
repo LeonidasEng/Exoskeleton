@@ -10,7 +10,7 @@
   <a href="https://github.com/LeonidasEng/Exoskeleton/">
     <img src="images/project-logo.png" alt="Logo">
   </a>
-  <h3 align="center">UCLAN Exogames 2023 Project</h3>
+  <h3 align="center"><img src="images/team-logo.png" alt="Team-Logo"></h3>
 
   <p align="center">
     UCLAN Exoskeleton - Exo Games 2023 Winner
