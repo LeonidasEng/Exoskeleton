@@ -54,6 +54,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Exo Games
+<details open>
+<summary>Click to expand/collapse</summary>
 ASTM International’s Exo Technology Center of Excellence (ET CoE) is sponsoring the Exo Games, a new initiative to improve student involvement and education in the exo technologies industry.
 
 The Exo Games is a competition open to university teams of S.T.E.M degree students, designed to connect them with exo industry professionals, help them build lifelong relationships, and get hands-on experience with new exo standards.  Team slots are on a first come first served basis and ASTM reserves the right to limit the number of teams due to space and logistic considerations."
@@ -69,6 +71,19 @@ Each team can use just one exoskeleton device at the competition, but all studen
 3. Poster Competition - Produce a poster to publicize the teams’ work. The poster is a demonstration of the team’s ability to sell their design solution pictorially.
 
 4. Presentation Competition - Give a short presentation explaining the design and development of their device to demonstrate their verbal & presentational skills.
+</details>
+
+<!-- About Project -->
+## About B.A.L.A.N.C.E
+<details>
+<summary>Click to expand/collapse</summary>
+
+The Body Assisted Lifting and Naturalistic Control Exoskeleton (B.A.L.A.N.C.E) is a quasi-active exoskeleton. The top half of the exoskeleton assists the exo pilot with lifting, it achieves this through the use of two bungee cords which are connected to spools located over the shoulder blades. The spools are controlled by two Dynamixel XM430-W210-R Smart Actuators. 
+<br />
+The control system is an Arduino Mega 2560 which has a HC-05 Bluetooth module which can provide real-time feedback to the pilot via their mobile phone. 
+<br />
+Based on the task, the pilot has the ability to choose between three tension settings, using a switch located on their exo belt. A 40N strength, a 25N dexterity, and a release setting which turns the tension off. There is also a Normally-Closed emergency stop located on the belt in the event of an emergency. When a setting has been engaged, potentiometers located at the left and right elbow joint can actively increase or decrease tension based on arm position. The system is all powered by a rechargable lithium ion & power bank pack which can provide 11.1V to the actuators and 5V to the Arduino controller for over 40 minutes of use.
+<br />
 
 ### Built With
 * C/C++
@@ -79,9 +94,16 @@ Each team can use just one exoskeleton device at the competition, but all studen
 * SolidWorks
 * Ansys
 
+</details>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP AND CHANGELOG -->
 ## B.A.L.A.N.C.E - Roadmap
+<details>
+<summary>Click to expand/collapse</summary>
+
 ### Sprint 1 Wokwi Simulation
 <a href="https://wokwi.com/projects/365491902229667841">View Sprint 1 Simulation</a>
 - [x] Created basic circuit.
@@ -92,6 +114,7 @@ Each team can use just one exoskeleton device at the competition, but all studen
 	- [x] Reset to Origin feature.
 - [x] New version using only 2 Steppers.
 - [x] Testing with Mechanical System.
+
 ### Sprint 2 Preparation with Feature exploration
 - [x] Ordered materials for project.
 - [x] Exploring pot control using cont. servos.
@@ -99,6 +122,7 @@ Each team can use just one exoskeleton device at the competition, but all studen
 - [x] Dynamixel Shield research.
 - [x] Dynamixel2Arduino and XM430-W210-R research.
 - [x] First script draft and flex sensor idea. 
+
 ### Sprint 3 Active testing
 - [x] Requirements Analysis for Dynamixel motors.
 - [x] Minimum Viable Product (MVP) strategy.
@@ -108,6 +132,7 @@ Each team can use just one exoskeleton device at the competition, but all studen
 - [x] Code Refactoring.
 - [x] Error Handling.
 - [x] Pilot Trial: Full System
+
 ### Sprint 4 Race to the finish line!
 - [x] Calibration
 - [x] Integration of HC-05 Module
@@ -116,6 +141,8 @@ Each team can use just one exoskeleton device at the competition, but all studen
 - [x] Pilot Trial: Complete System
 - [x] Troubleshooting and Final Checks
 - [x] Demonstration at Exogames 2023  
+</details>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Competition Result
 Winner of ASTM’s Exo Games 2023: Award for designing, building, and testing an exoskeleton that demonstrates the augmentation of balance, strength, dexterity, speed, and stamina, while fulfilling ASTM standards.
