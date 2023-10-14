@@ -30,8 +30,7 @@
   <ol>
     <li>
       <a href="#about-the-exo-games">About The Exo Games</a></li>
-    <li><a href="#about-B.A.L.A.N.C.E">About B.A.L.A.N.C.E</a></li>
-    <li> 
+    <li><a href="#about-B.A.L.A.N.C.E">About B.A.L.A.N.C.E</a> 
       <ul>
         <li><a href="#built-with">Built With</a>
       </ul>
