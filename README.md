@@ -29,17 +29,18 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-exo-games">About The Exo Games</a>
+      <a href="#about-the-exo-games">About The Exo Games</a></li>
+    <li><a href="#about-B.A.L.A.N.C.E">About B.A.L.A.N.C.E</a> 
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">Built With</a>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
     	  <ul>
         <li><a href="#sprint-1-wokwi-simulation">Sprint 1 Wokwi Simulation</a></li>
         <li><a href="#sprint-2-preparation-with-feature-exploration">Sprint 2 Preparation with Feature exploration</a></li>
-        <li><a href="#sprint3-sprint-3-active-testing">Sprint 3 Active testing</a></li>
-        <li><a href="#sprint4-race-to-the-finish-line!">Sprint 4 Race to the finish line!</a></li>
+        <li><a href="#sprint-3-sprint-3-active-testing">Sprint 3 Active testing</a></li>
+        <li><a href="#sprint-4-race-to-the-finish-line!">Sprint 4 Race to the finish line!</a></li>
       </ul>
 	  </li>
     <li><a href="#changelog">Changelog</a></li>
@@ -208,7 +209,7 @@ This source code is licensed under the GPLv3-style license found in: [LICENSE](h
 <p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
 ## Team Member roles
-Leo Hayes - Developer
+Leo Hayes - Developer - leo.m.hayes@hotmail.co.uk
 
 Five other team members and their roles (anon):
 Technical Lead, Systems Designer(s), CAD Specialist, Administrator.
